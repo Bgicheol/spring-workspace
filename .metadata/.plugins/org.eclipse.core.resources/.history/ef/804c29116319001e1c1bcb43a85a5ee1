@@ -1,0 +1,15 @@
+package com.ezen.springmvc.common;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class MyReducer {
+	
+	MyReducer reducer;
+	
+	@Test
+	public void test1() {
+		assertEquals(150, reducer.reduce(new Integer[] {10, 20, 30, 40, 50}));
+	}
+}

@@ -1,0 +1,25 @@
+package com.ezen.springmvc.model;
+
+public class ProgramingStudent extends Student {
+	
+	private int java;
+	
+	public ProgramingStudent() {
+		super();
+		java = 10;
+	}
+		
+	public int getJava() {
+		return java;
+	}
+
+	public void setJava(int java) {
+		this.java = java;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("%s[%s점]", super.getName(), java);
+	}
+	
+}

@@ -1,0 +1,30 @@
+package com.ezen.springmvc.model;
+
+import org.springframework.stereotype.Component;
+
+// Student가 필요한 자리에 대신 들어가게 된다. Component 옵션 
+
+@Component
+public class ProgramingStudent extends Student {
+	
+	private int java;
+	
+	public ProgramingStudent() {
+		super();
+		java = 10;
+	}
+		
+	public int getJava() {
+		return java;
+	}
+
+	public void setJava(int java) {
+		this.java = java;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("%s[%s점]", name, java);
+	}
+	
+}

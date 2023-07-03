@@ -1,0 +1,19 @@
+package com.ezen.springmvc.common;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class MyTest {
+	
+	// 다른 폴더지만 같은 패키지라서 import를 안해도 쓸 수 있음
+	@Test
+	public void test1() {
+		assertEquals("elppa", MyStringBuilder.reverse("apple"));
+	}
+	
+	public void test2() {
+		assertEquals(null, MyStringBuilder.reverse(null));
+	}
+
+}
