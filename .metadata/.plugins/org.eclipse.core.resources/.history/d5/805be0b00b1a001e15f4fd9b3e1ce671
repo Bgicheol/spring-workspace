@@ -1,0 +1,16 @@
+package com.ezen.springmvc.model;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.junit.Test;
+
+public class EmployeeTest {
+
+	private static Logger log = LogManager.getLogger(EmployeeTest.class);
+	
+	@Test
+	public void Test() {
+		
+		log.info(new EmployeeTest());
+	}
+}

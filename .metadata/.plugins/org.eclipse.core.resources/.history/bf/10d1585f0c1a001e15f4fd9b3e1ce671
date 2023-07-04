@@ -1,0 +1,33 @@
+06_Lombok.txt
+
+# Lombok
+ 
+ - 간단한 어노테이션 추가로 자바빈 스타일의 객체를 자동으로 완성해주는 라이브러리
+ 
+# Lombok 설치
+
+ 1. 구글에 lombok 검색
+ 2. 다운로드
+ 3. 실행 후 원하는 IDE의 위치를 선택해 설치
+ 4. IDE 재시작 
+ 5. dependency 등록 (maven repository에서 lombok)
+ 6. 빌드 다시한번
+ 
+# Lombok의 어노테이션들
+
+ @Getter
+ 
+  - 클래스 위에 붙이면 모든 필드에 대한 Getter를 생성한다 
+  - 필드 위에 붙으면 해당 필드에만 Getter를 생성한다
+ 
+ @Setter
+ 
+  - 클래스 위에 붙이면 모든 필드에 대한 Setter를 생성한다 
+  - 필드 위에 붙으면 해당 필드에만 Setter를 생성한다
+ 
+ @ToString
+ 
+  - 해당 클래스의 toString()을 알아서 구현해준다
+ 
+ @Data
+ 

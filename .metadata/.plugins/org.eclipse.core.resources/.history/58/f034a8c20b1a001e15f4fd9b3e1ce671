@@ -1,0 +1,18 @@
+package com.ezen.springmvc;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
+import com.ezen.springmvc.model.EmployeeDTO;
+
+public class EmployeeTest {
+	
+	private Logger log = LogManager.getLogger(EmployeeDTO.class);
+	
+	EmployeeDTO dto = new EmployeeDTO();
+	
+	@Test
+	public void test() {
+		
+	}
+ }

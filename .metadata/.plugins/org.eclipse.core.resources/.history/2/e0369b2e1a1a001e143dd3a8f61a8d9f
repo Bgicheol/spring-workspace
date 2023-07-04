@@ -1,0 +1,47 @@
+package com.ezen.springmvc.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import lombok.extern.log4j.Log4j;
+
+@Log4j
+@Controller
+public class HelloController {
+	 
+	@RequestMapping(value = {"/hello", "/hi"},
+			method = {RequestMethod.GET, RequestMethod.POST})
+	String hello() {
+		
+		log.info("접속했습니다");
+		
+		return "hello";
+	}
+	
+	@RequestMapping(value = "/survey/", method = RequestMethod.GET)
+	String survey() {
+		return "survey/form";
+	}
+	
+	// 해당 컨트롤러에서 필요한 것을 메서드의 인자에 정의해 두면 
+	// 스프링이 알아서 채워준다
+	@PostMapping("/survey/")
+	String addSurvey(HttpServletRequest request, 
+			HttpServletResponse response) {
+		
+		String name = request.getParameter("name");
+		String age = request.getParameter("age");
+		log.error("name: " + name);
+		log.error("age: " + age);
+	
+		request.setAttribute("user_name", name);
+		request.setAttribute("user_age", age);
+		
+		return "survey/result";
+	}
+}

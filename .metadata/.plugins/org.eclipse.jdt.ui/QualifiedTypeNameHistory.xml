@@ -11,7 +11,18 @@
     <fullyQualifiedTypeName name="org.springframework.test.context.ContextConfiguration"/>
     <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Before"/>
     <fullyQualifiedTypeName name="org.junit.Before"/>
-    <fullyQualifiedTypeName name="org.apache.log4j.LogManager"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="org.apache.log4j.LogManager"/>
+    <fullyQualifiedTypeName name="com.ezen.springmvc.model.EmployeeTest"/>
     <fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="lombok.NonNull"/>
+    <fullyQualifiedTypeName name="lombok.RequiredArgsConstructor"/>
+    <fullyQualifiedTypeName name="com.ezen.springmvc.model.EmployeeDTO"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
 </qualifiedTypeNameHistroy>

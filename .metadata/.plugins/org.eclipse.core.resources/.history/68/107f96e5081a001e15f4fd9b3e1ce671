@@ -1,0 +1,16 @@
+package com.ezen.springmvc.model;
+
+import java.util.Date;
+
+import lombok.Data;
+
+
+// 롬복이 Getter, Setter, 생성자, toString등을 모두 자동으로 생성해준다
+@Data
+public class EmployeeDTO {
+	
+	String first_name;
+	String last_name;
+	Date hire_data;
+	Integer salary;
+}
