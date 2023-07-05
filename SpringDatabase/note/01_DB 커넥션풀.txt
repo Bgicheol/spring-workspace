@@ -1,0 +1,57 @@
+01_DB 커넥션풀.txt
+
+# DBCP (Database Connection Pool)
+
+ - DB로 작업을 수행할 떄 마다 새로운 DB연결을 생성하는것이 자원의 낭비가 되기 때문에
+   연결들을 미리 생성해두는 객체
+ - 커넥션풀을 사용하면 DB와의 연결을 맺고 끊는 과정이 생략되기 때문에
+   (대신 빌리고 반환하며 사용) 서버 성능이 크게 향상된다.
+ - DB와의 접속이 갑자기 활발해지면 연결을 더 늘리거나 한적해지면 연결을 다시 최소한으로 유지하는 등의
+   기능을 제공한다.
+   
+# 유명한 자바 DBCP 라이브러리들
+
+ - Apache Commons DBCP
+ - Hikari CP
+ - ...
+
+# HikariConfig/HikariDataSource 객체 생성하기 (자바코드)
+		
+		형식을 참고. 클래스나 내용은 변동될 수 있음
+		public class DBConnection {
+			
+			public static HikariDataSource getDataSource() {
+			
+			HikariConfig config = new HikariConfig();
+			
+			config.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:XE");
+			config.setUsername("hr");
+			config.setPassword("1234");
+			config.addDataSourceProperty("cachePrepStmts", "true");
+			config.addDataSourceProperty("prepStmtCacheSize", "250");
+			config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
+			config.setMinimumIdle(3);// 최소 3개의 연결은 유지한다
+			config.setMaximumPoolSize(10); // 최대 연결 개수는 10개다
+								// 1초   60초  10분
+			config.setIdleTimeout(1000 * 60 * 10); // 10분간 연결이 없으면 알아서 끊김
+		
+			// 설정을 전달해 DB 커넥션 풀 객체를 생성
+			return new HikariDataSource(config);
+			}
+		}
+# HikariConfig/HikariDataSource 객체 생성하기 (XML)
+	형식을 참고. 내용은 변동될 수 있음
+	<!-- 자바빈 형태의 클래스는 xml을 통해 컨텍스트에 등록할 수 있다. -->
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+	<!-- <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/> 생략해도 알아서 잡아주는 듯?-->
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+		<property name="username" value="hr"/>
+		<property name="password" value="1234"/>
+		<property name="minimumIdle" value="3"/>
+		<property name="maximumPoolSize" value="10"/>
+		<property name="idleTimeout" value="600000"/>	
+	</bean>	
+	
+	<bean id="hikariDataSource" class="com.zaxxer.hikari.HikariDataSource">
+		<constructor-arg ref="hikariConfig"/>
+	</bean>
