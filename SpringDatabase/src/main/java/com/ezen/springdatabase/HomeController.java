@@ -1,7 +1,5 @@
 package com.ezen.springdatabase;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.Locale;
 
 import org.slf4j.Logger;
@@ -13,7 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.ezen.springdatabase.dto.Board2DTO;
 import com.ezen.springdatabase.mapper.Board2Mapper;
+import com.ezen.springdatabase.mapper.XMLBoardMapper;
 
 import lombok.extern.log4j.Log4j;
 
@@ -23,6 +23,8 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @Controller
 public class HomeController {
+	@Autowired
+	XMLBoardMapper xmlBoardMapper;
 	
 	@Autowired
 	Board2Mapper board2Mapper;
@@ -39,15 +41,34 @@ public class HomeController {
 	}
 	
 	
-	@GetMapping("/borad/list")
+	@GetMapping("/board/list")
 	public String list(int page, Model model) {
-			log.info(page);
-			if (page == 1) {
+		
+		if (page == 1) {
+			model.addAttribute("board2", board2Mapper.getPage(1, 10));
 		} else {
-			model.addAttribute("board", board2Mapper.getPage(11, 20));
+			model.addAttribute("board2", board2Mapper.getPage(21, 30));
 		}
 		
 		return "/board/list";
 	}
 	
+	@GetMapping("/board/all")
+	public void all() {
+		for (Board2DTO board : xmlBoardMapper.getAll()) {
+			log.info(board);
+		}
+	}
+	@GetMapping("/board/add")
+	public void add() {
+		Board2DTO board = new Board2DTO();
+		
+		board.setWriter("XML_Tester");
+		board.setBoard_pw("xml");
+		board.setBoard_content("대충내용");
+		board.setBoard_title("XML Test");
+		
+		xmlBoardMapper.add(board);
+		log.info("결과:" + xmlBoardMapper.add(board));
+	}
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ezen.springdatabase.mapper.XMLBoardMapper">
+	<select id="getAll" resultType="com.ezen.springdatabase.dto.Board2DTO">
+		SELECT * FROM board2
+	</select>
+	<insert id="add" parameterType="com.ezen.springdatabase.dto.Board2DTO">
+		INSERT INTO board2 (
+			board_id,
+			board_title,
+			board_content,
+			board_pw,
+			writer,
+			write_date,
+			board_view			
+		) VALUES (
+			board_id_seq.nextval,
+			#{board_title},
+			#{board_content},
+			#{board_pw},
+			#{writer},
+			sysdate,
+			5
+		)		
+	</insert>
+</mapper>
