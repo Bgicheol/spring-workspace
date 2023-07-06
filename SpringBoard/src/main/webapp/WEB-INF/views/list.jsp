@@ -13,7 +13,7 @@
 	<div>
 		<c:forEach items="${boards}" var="board">
 			<div>${board.board_id}</div>
-			<div><a href="./detail"}>${board.board_title}</a></div>
+			<div><a href="./detail?board_id=${board.board_id}">${board.board_title}</a></div>
 			<div>${board.writer}</div>
 			<div>${board.board_view}</div>
 		</c:forEach>

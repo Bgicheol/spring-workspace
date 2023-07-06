@@ -10,6 +10,10 @@
 	<div>제목</div>
 	<input type="text" value="${board.board_title}" />
 	<div>내용</div>
-	<input type="text" value="${board.board_title}" />
+	<input type="text" value="${board.board_content}" />
+	<div>작성자</div>
+	<input type="text" value="${board.writer}" readonly />
+
+	
 </body>
 </html>

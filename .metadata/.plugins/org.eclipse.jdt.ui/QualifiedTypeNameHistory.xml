@@ -43,6 +43,9 @@
     <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Delete"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
-    <fullyQualifiedTypeName name="com.ezen.springdatabase.dto.Board2DTO"/>
     <fullyQualifiedTypeName name="com.ezen.springdatabase.mapper.Board2Mapper"/>
+    <fullyQualifiedTypeName name="lombok.extern.log4j.Log4j"/>
+    <fullyQualifiedTypeName name="com.ezen.springdatabase.mapper.XMLBoardMapper"/>
+    <fullyQualifiedTypeName name="com.ezen.springdatabase.dto.Board2DTO"/>
+    <fullyQualifiedTypeName name="com.ezen.board.mapper.XMLBoardMapper"/>
 </qualifiedTypeNameHistroy>
