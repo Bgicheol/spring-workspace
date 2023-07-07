@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>${board_id}글</title>
+<title>${param.board_id}글</title>
 </head>
 <body>
 	<div>제목</div>
 	<input type="text" value="${board.board_title}" />
 	<div>내용</div>
-	<input type="text" value="${board.board_content}" />
+	<input type="text" value="${board.board_content}" style="width: 300px; height: 300px;" />
 	<div>작성자</div>
 	<input type="text" value="${board.writer}" readonly />
 

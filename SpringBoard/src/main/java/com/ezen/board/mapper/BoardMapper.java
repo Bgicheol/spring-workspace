@@ -15,4 +15,5 @@ public interface BoardMapper {
 	List<BoardDTO> getPage(
 			@Param("start") int start, 
 			@Param("end") int end);
+	
 }

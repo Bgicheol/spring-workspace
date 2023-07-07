@@ -6,4 +6,16 @@
 	<select id="getBoard" resultType="com.ezen.board.dto.BoardDTO" >
 		SELECT * FROM board2 WHERE board_id=${board_id}
 	</select>
+	<select id="get" resultType="com.ezen.board.dto.BoardDTO">
+		SELECT * FROM board2 WHERE board_id=#{id}
+	</select>
+	
+	<update id="update" parameterType="com.ezen.board.dto.BoardDTO">
+		UPDATE board2 SET
+			board_title=#{board_title},
+			board_content=#{board_content},
+			write_date=sysdate
+		WHERE
+			board_id=#{board_id}
+	</update>
 </mapper>

@@ -9,6 +9,15 @@
 			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
 		</layout>
 	</appender>
+	<!--  Log4jdbc Loggers -->
+	<logger name="jdbc.sqltiming">
+		<level value="info"/>
+	</logger>
+	
+	<logger name="jdbc.resultsettable">
+		<level value="info"/>
+	</logger>
+	
 	
 	<!-- Application Loggers -->
 	<logger name="com.ezen.board">

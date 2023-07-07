@@ -29,5 +29,26 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
+	
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<!-- 
+			forceEncoding: encoding 타입이 설정되어 있는 요청도 강제로 변환
+			(forceEncoding이 설정되지 않는 경우는 encoding 타입이 null인 요청만 변경)	
+		 -->
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<servlet-name>appServlet</servlet-name>
+	</filter-mapping>
 </web-app>

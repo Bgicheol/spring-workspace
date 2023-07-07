@@ -10,6 +10,8 @@
 <body>
 	
 	<h3>${param.page}페이지</h3>
+	
+	<!-- 
 	<div>
 		<c:forEach items="${boards}" var="board">
 			<div>${board.board_id}</div>
@@ -18,6 +20,12 @@
 			<div>${board.board_view}</div>
 		</c:forEach>
 	</div>
+	 -->
+	 
+	 <c:forEach items="${boards}" var="board">
+	 	${board}
+	 	<a href="./modify?id=${board.board_id}">수정</a>
+	 </c:forEach>
 	
 </body>
 </html>
